@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <Style>
+        /* style table memperbesar ukuran font dan center */
+        table {
+
+            font-size: larger;
+            text-align: center;
+        }
+
+        /* mengatur ukuran cell tabel */
+        td,
+        th {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* mengatur ukuran cell tabel tertentu */
+        th {
+            background-color: rgb(48, 48, 48);
+        }
+
+        /* mengatur ukuran button dan ukuran font serta align font */
+        .button {
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            text-align: center;
+        }
+    </Style>
+</head>
+
+<body>
+    <!-- Form -->
+    <form method="POST" name="Hitung">
+        <!-- mengatur cell pada tabel seperti border, jarak cell, dan jarak ini dengan garis -->
+        <table cellspacing="0" cellpadding="5" border="1" align="center">
+            <br>
+            <tr>
+                <td>
+                    Nilai
+                </td>
+                <!-- merger 4 kolom -->
+                <td colspan="4">
+                    <p><input type="text" name="Nilai1" size="25"> </p>
+                </td>
+                <th rowspan="2">
+                    <input class="button" type="button" name="Penjumlahan" value="=" onclick="konversi()">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Konversi
+                </td>
+                <!-- merger 4 kolom -->
+                <td colspan="4">
+                    <p><input type="text" name="Hasil" size="25"> </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script language="JavaScript">
+        // peng-konversian nilai ke abjad dengan batas bawah dan batas atas
+        // apabila diluar kisaran (0-100) maka hasilnya tidak valid
+        function konversi() {
+            var convert = parseInt(document.Hitung.Nilai1.value)
+            if (convert >= 0 && convert <= 40) {
+                document.Hitung.Hasil.value = "E"
+            } else if (convert > 40 && convert <= 55) {
+                document.Hitung.Hasil.value = "D"
+            } else if (convert > 55 && convert <= 60) {
+                document.Hitung.Hasil.value = "C"
+            } else if (convert > 60 && convert <= 65) {
+                document.Hitung.Hasil.value = "BC"
+            } else if (convert > 65 && convert <= 70) {
+                document.Hitung.Hasil.value = "B"
+            } else if (convert > 70 && convert <= 80) {
+                document.Hitung.Hasil.value = "AB"
+            } else if (convert > 80 && convert <= 100) {
+                document.Hitung.Hasil.value = "A"
+            } else {
+                document.Hitung.Hasil.value = "Nilai tidak valid"
+            }
+        }
+    </script>
+</body>
+
+</html>

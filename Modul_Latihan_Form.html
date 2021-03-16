@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contoh Program Javascript</title>
+</head>
+<script language="JavaScript">
+    // untuk menghitung suatu bilangan habis atau tidaknya jika dibagi "0"
+    function ganjil() {
+        var val1 = document.kirim.T1.value
+        if (val1 % 2 == 0)
+            document.kirim.T2.value = "bilangan genap"
+        else
+            document.kirim.T2.value = "bilangan ganjil"
+    }
+    // mengubah warna backgrond
+    function ubahwarnabg(warna) {
+        document.bgColor = warna;
+
+    }
+    // mengubah warna font
+    function ubahwarnafg(warna) {
+        document.fgColor = warna;
+    }
+</script>
+
+<body>
+    <form method="POST" name="kirim">
+        <p>Angka <input type="text" name="T1" size="20"> </p>
+        <p>Adalah <input type="text" name="T2" size="20"> </p>
+        <input type="button" name="B1" value="TEBAK" onclick=ganjil()>
+        <br>
+        <br>
+        <input type="button" name="BgHijau" value="Bg Hijau" onclick="ubahwarnabg('Green')">
+        <input type="button" name="BgPutih" value="Bg Putih" onclick="ubahwarnabg('White')">
+        <br>
+        <input type="button" name="FgBiru" value="Font Biru" onclick="ubahwarnafg('Blue')">
+        <input type="button" name="FgMerah" value="Font Merah" onclick="ubahwarnafg('Red')">
+
+    </form>
+</body>
+
+</html>

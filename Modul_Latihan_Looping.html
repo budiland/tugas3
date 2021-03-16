@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contoh Program Javascript</title>
+</head>
+<script language="JavaScript">
+    function loopswitch() {
+        angka = window.prompt("Nilai II")
+        switch (angka) {
+            case "1":
+                document.write("Satu")
+                break
+            case "2":
+                document.write("Dua")
+                break
+            case "3":
+                document.write("Tiga")
+                break
+            case "4":
+                document.write("Empat")
+                break
+            case "5":
+                document.write("Lima")
+                break
+            default:
+                document.write("bilangan lainnya")
+        }
+    }
+
+    function loopfor() {
+        for (x = 0; x <= 10; x++)
+            document.write(x + "<br>")
+    }
+
+    function loopdowhile() {
+        var x = 0
+        do {
+            document.write(x + "<br>")
+            x++;
+        }
+        while (x <= 10)
+    }
+</script>
+
+<body>
+    <input type="button" name="button1" value="Switch" onclick=loopswitch()>
+    <input type="button" name="button2" value="For" onclick=loopfor()>
+    <input type="button" name="button3" value="Do While" onclick=loopdowhile()>
+</body>
+
+</html>

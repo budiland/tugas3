@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <Style>
+        /* style table memperbesar ukuran font dan center */
+        table {
+
+            font-size: larger;
+            text-align: center;
+        }
+
+        /* mengatur ukuran cell tabel */
+        td,
+        th {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* mengatur ukuran cell tabel tertentu */
+        th {
+            background-color: rgb(48, 48, 48);
+        }
+
+        /* mengatur ukuran button dan ukuran font serta align font */
+        .button {
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            text-align: center;
+        }
+    </Style>
+</head>
+
+<body>
+    <!-- Form -->
+    <form method="POST" name="Hitung">
+        <!-- mengatur cell pada tabel seperti border, jarak cell, dan jarak ini dengan garis -->
+        <table cellspacing="0" cellpadding="5" border="1" align="center">
+            <br>
+            <tr>
+                <td>
+                    Nilai1
+                </td>
+                <!-- merger 4 kolom -->
+                <td colspan="4">
+                    <p><input type="text" name="Nilai1" size="25"> </p>
+                </td>
+                <th>
+                    <input class="button" type="button" name="Penjumlahan" value="+" onclick="tambah()">
+                </th>
+                <th>
+                    <input class="button" type="button" name="Pengurangan" value="-" onclick="kurang()">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Nilai2
+                </td>
+                <!-- merger 4 kolom -->
+                <td colspan="4">
+                    <p><input type="text" name="Nilai2" size="25"> </p>
+                </td>
+                <th>
+                    <input class="button" type="button" name="Perkalian" value="x" onclick="kali()">
+                </th>
+                <th>
+                    <input class="button" type="button" name="Pembagian" value="/" onclick="bagi()">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Hasil
+                </td>
+                <!-- merger 4 kolom -->
+                <td colspan="4">
+                    <p><input type="text" name="Hasil" size="25"> </p>
+                </td>
+                <!-- merger 2 kolom -->
+                <th colspan="2">
+                    <input class="button" type="button" name="Modulus" value="%" onclick="modulus()">
+                </th>
+            </tr>
+        </table>
+    </form>
+
+    <script language="JavaScript">
+        // perseInt berguna untuk konversi string ke integer
+        // fungsi penjumlahan
+        // var a diambil dari value Nilai1
+        // var b diambil dari value Nilai2
+        function tambah() {
+            var a = parseInt(document.Hitung.Nilai1.value)
+            var b = parseInt(document.Hitung.Nilai2.value)
+            // penjumlahan var
+            document.Hitung.Hasil.value = (a + b)
+        }
+
+        function kurang() {
+            var a = parseInt(document.Hitung.Nilai1.value)
+            var b = parseInt(document.Hitung.Nilai2.value)
+            // pengurangan var
+            document.Hitung.Hasil.value = (a - b)
+        }
+
+        function kali() {
+            var a = parseInt(document.Hitung.Nilai1.value)
+            var b = parseInt(document.Hitung.Nilai2.value)
+            // perkalian var
+            document.Hitung.Hasil.value = (a * b)
+        }
+
+        function bagi() {
+            var a = parseInt(document.Hitung.Nilai1.value)
+            var b = parseInt(document.Hitung.Nilai2.value)
+            // pembagian var
+            document.Hitung.Hasil.value = (a / b)
+        }
+
+        function modulus() {
+            var a = parseInt(document.Hitung.Nilai1.value)
+            var b = parseInt(document.Hitung.Nilai2.value)
+            // modulus var
+            document.Hitung.Hasil.value = (a % b)
+        }
+    </script>
+</body>
+
+</html>
